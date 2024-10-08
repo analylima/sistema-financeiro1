@@ -20,6 +20,4 @@ if ($conexao=>query($sql)) {
 }
 
 
-
-
 ?>
