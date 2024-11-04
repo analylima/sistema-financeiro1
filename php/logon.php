@@ -15,7 +15,16 @@ $query = $conexão->query($sql);
 
 $resultado = $query->fetch_assoc();
 
-print_r($resultado);
+$email_banco = $resultado['email'];
+$senha_banco = $resultado['senha'];
+
+if ($email == $email_banco && $password == $senha_banco) {
+    session_start();
+    $senssion['id'] = $resultado['id_usuario'];
+    header('location: ../tela_inicial.php');
+}else{
+    echo "<script> alert('Usuario ou senha Invalida'); history.back(); </script>";
+}
 
 
 ?>
